@@ -76,9 +76,9 @@ def calculate_average_time(solution_times):
     return sum(solution_times, timedelta(0)) / len(solution_times)
 
 
-def print_result(epsilon_solutions, solution_times):
-        print(f'Average Epsilon: {calculate_average_epsilon(epsilon_solutions)}')
-        print(f'Average Solution time: {calculate_average_time(solution_times)}')
+def print_result(epsilon_solutions, solution_times, tol):
+        print(f'Average Epsilon for {tol} errors: {calculate_average_epsilon(epsilon_solutions)}')
+        print(f'Average Solution time for {tol} errors: {calculate_average_time(solution_times)}')
 
 N = 100
 ITEMS_NUMBER = 100
@@ -97,11 +97,10 @@ for tol in TOL:
         items_weight_max=ITEMS_WEIGHTS_RANGE[1])
 
         genetic_algorithm.run()
-        # genetic_algorithm.print_result()
         epsilon_solutions[i] = genetic_algorithm.get_epsilon(genetic_algorithm.parent)
         solution_times[i] = genetic_algorithm.solution_time
 
-    print_result(epsilon_solutions, solution_times)
+    print_result(epsilon_solutions, solution_times, tol)
         
 
     
