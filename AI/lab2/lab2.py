@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 from PIL import Image
+import os
 
 def get_data(path):
     df = pd.read_csv(path, delimiter=',', header=None)
@@ -41,10 +42,10 @@ def normalize_data(x_data):
 
 
 def main():
-    TEST_DATA_PATH = 'mnist_test.csv'
-    TRAIN_DATA_PATH = 'mnist_train.csv' 
+    TEST_DATA_PATH = './mnist_test.csv'
+    TRAIN_DATA_PATH = './mnist_train.csv' 
 
-    1
+    #1
     x_train , y_train = get_data(TRAIN_DATA_PATH)
     x_test, y_test = get_data(TEST_DATA_PATH)
 
@@ -94,6 +95,7 @@ def main():
     x = list(im.getdata())
     
     x = (1.0*np.asarray(x))/max(x)
+    draw_number(x)
     y_pred = perceptron.predict(x)
     print(f'Liczba z obrazka to: {4 if y_pred == 0 else 3}')
 
