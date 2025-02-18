@@ -9,9 +9,6 @@ x_test = x_test.reshape(-1, 28,28,1) / 255.0
 y_train = tf.keras.utils.to_categorical(y_train, 10)
 y_test = tf.keras.utils.to_categorical(y_test, 10)
 
-# print(len(x_train[0]), len(x_train[0][0]))
-# print(x_test, y_test)
-
 model = tf.keras.models.Sequential(
     [
         tf.keras.layers.Conv2D(24, (3,3), activation='relu', input_shape=(28, 28, 1)),

@@ -10,7 +10,6 @@ def get_data(path):
     df = pd.read_csv(path, delimiter=',', header=None)
     y_data = df.iloc[:, :1]
     x_data = df.iloc[:, 1:]
-    # print(df, y_data, x_data)
 
     return x_data, y_data
 

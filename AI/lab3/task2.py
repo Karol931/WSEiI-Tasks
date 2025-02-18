@@ -70,7 +70,6 @@ def main():
         if err == 0 or counter == 100000:
             break
 
-        # train after epoch
         w1 -= eta*sum_w1_grad
         w2 -= eta*sum_w2_grad  
 

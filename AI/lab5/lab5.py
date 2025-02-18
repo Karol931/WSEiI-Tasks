@@ -10,10 +10,10 @@ import tensorflow as tf
 
 def create_augmentation(rotation_range, width_shift_range, height_shift_range, zoom_range):
     return tf.keras.preprocessing.image.ImageDataGenerator(
-        rotation_range=rotation_range,             # Zakres obrotów
-        width_shift_range=width_shift_range,       # Przesunięcie w poziomie
-        height_shift_range=height_shift_range,     # Przesunięcie w pionie
-        zoom_range=zoom_range                      # Skalowanie
+        rotation_range=rotation_range,             
+        width_shift_range=width_shift_range,       
+        height_shift_range=height_shift_range,    
+        zoom_range=zoom_range                      
     )
 
 
